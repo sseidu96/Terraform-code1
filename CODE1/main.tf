@@ -1,33 +1,23 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "6.56.0"
-    }
-  }
-}
-
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-1a"
 }
 
 resource "aws_iam_group" "developers" {
   name = "developers"
 }
 
-
-resource "aws_iam_user" "lb" {
+resource "aws_iam_user" "loadbalancer" {
   name = "loadbalancer"
 }
 
-resource "aws_iam_user" "Admin" {
-  name = "Adminstrator"
+resource "aws_iam_user" "administrator" {
+  name = "Administrator"
 }
 
-resource "aws_iam_user" "Manager" {
+resource "aws_iam_user" "manager" {
   name = "Manager"
 }
 
-resource "aws_iam_group" "DB" {
+resource "aws_iam_group" "database" {
   name = "Database"
 }
